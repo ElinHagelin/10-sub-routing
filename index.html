@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10-sub-routing</title>
+</head>
+
+<body>
+  <div id="root">
+
+    <header>
+      <h1> Studieinfo </h1>
+      <div>
+        <a href="#"> Kursmaterial </a>
+        <a href="#"> Inlämningar </a>
+        <a href="#"> Betygsöversikt </a>
+      </div>
+    </header>
+    <div class="main-content">
+      <nav>
+        <h2> Kursmaterial </h2>
+        <a href="#">HTML &amp; CSS</a>
+        <a href="#">JavaScript</a>
+        <a href="#">Frontendramverk</a>
+      </nav>
+
+      <main>
+        <h3> Innehåll </h3>
+        <ul>
+          <li> 17/4 Redovisningar av grupparbeten. useEffect introduktion </li>
+          <li> 19/4 useEffect och AJAX, fördjupning </li>
+          <li> 24/4 React Router </li>
+          <li> 26/4 React Router fördjupning </li>
+        </ul>
+      </main>
+    </div>
+
+    <pre><code>
+    // Uppgift: bygg en app med React Router, som visar innehållet i datastrukturerna i tre nivåer.
+    // headings är länkarna i första boxen
+    // subHeadings är länkarna i andra boxen, dvs under och tillvänster
+    // subSubHeadings är list items i boxen till höger
+    // När man klickar på en länk ska routern visa rätt data i alla boxarna.
+    // URL kan ex.vis vara: /1/3/5 för kursmaterial, frontendramverk, 17/4 redovisningar...
+    const headings = [
+      { id: 1, title: 'Kursmaterial' },
+      { id: 2, title: 'Inlämningar' },
+      { id: 3, title: 'Betygsöversikt' },
+    ]
+    const subHeadings = [
+      { id: 1, parent: 1, title: 'HTML &amp; CSS' },
+      { id: 2, parent: 1, title: 'JavaScript' },
+      { id: 3, parent: 1, title: 'Frontendramverk' },
+      { id: 4, parent: 2, title: 'Grupparbete HTML' },
+      { id: 5, parent: 2, title: 'Grupparbete JavaScript' },
+      { id: 6, parent: 3, title: 'HTML &amp; CSS - G' },
+      { id: 7, parent: 3, title: 'JavaScript - VG' },
+      { id: 8, parent: 3, title: 'Frontendramverk - MVG' },
+    ]
+    const subSubHeadings = [
+      { id: 1, parent: 1, title: 'HTML resurs nr 1' },
+      { id: 2, parent: 1, title: 'HTML resurs nr 2' },
+      { id: 3, parent: 2, title: 'JavaScript resurs nr 1' },
+      { id: 4, parent: 2, title: 'JavaScript resurs nr 2' },
+      { id: 5, parent: 3, title: '17/4 Redovisningar av grupparbeten. useEffect introduktion' },
+      { id: 6, parent: 3, title: '19/4 useEffect och AJAX, fördjupning' },
+      { id: 7, parent: 3, title: '24/4 React Router' },
+      { id: 8, parent: 3, title: '26/4 React Router fördjupning' },
+      { id: 9, parent: 4, title: 'Mer info om grupparbetet HTML' },
+      { id: 10, parent: 5, title: 'Mer info om grupparbetet JavaScript' },
+      { id: 11, parent: 8, title: 'Feedback: MVG pga mycket goda kunskaper' },
+    ]
+    </code></pre>
+
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

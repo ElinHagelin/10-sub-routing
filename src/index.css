@@ -1,0 +1,39 @@
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a {
+  margin-right: 0.5em;
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+  background-color: #F6C8EA;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+main {
+  border: 1px solid gray;
+  padding: 0.8rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+main {
+  flex-grow: 1;
+}
